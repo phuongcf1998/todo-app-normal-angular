@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col">
+    <ul class="list-item ">
+      <app-item
+        [items]="items"
+        (successItem)="handleSuccessItem($event)"
+        (deleteItemDefault)="handleDeleteItemDefault($event)"
+      ></app-item>
+      <app-item
+        *ngIf="itemsSuccess.length > 0"
+        [itemsSuccess]="itemsSuccess"
+        (deleteItemSuccess)="handleDeleteItemSuccess($event)"
+      ></app-item>
+    </ul>
+  </div>
+</div>

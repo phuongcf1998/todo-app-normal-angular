@@ -1,0 +1,57 @@
+<ng-container *ngIf="items.length > 0; else other_content">
+  <li *ngFor="let item of items" class="item-wrapper container">
+    <div class="row">
+      <div class="col-lg-8">
+        <span id="{{ item.id }}" class="item-name">{{ item.name }}</span>
+      </div>
+      <div class="col-lg-4 d-flex justify-content-end">
+        <div class="item-btn-groups" [class]="hideBtn">
+          <button
+            class="btn btn-success btn-complete"
+            (click)="pushSuccessItem($event, item)"
+          >
+            Complete
+          </button>
+          <button
+            class="btn btn-danger btn-delete"
+            (click)="deleteItemByType(item, 'default')"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </li>
+</ng-container>
+
+<ng-template #other_content>
+  <ng-container>
+    <li *ngFor="let item of itemsSuccess" class="item-wrapper container">
+      <div class="row">
+        <div class="col-lg-8">
+          <span
+            [style.text-decoration]="lineThrough"
+            [style.color]="greenColor"
+            class="item-name"
+            >{{ item.name }}</span
+          >
+        </div>
+        <div class="col-lg-4">
+          <div class="item-status" [class]="isSuccess">
+            <span [style.font-size]="fontSize" [style.color]="greenColor"
+              >Successed</span
+            >
+            &nbsp;
+            <i class="bi bi-calendar-check icon-success"></i>
+            <button
+              class="btn btn-danger btn-delete"
+              (click)="deleteItemByType(item, 'success')"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ng-container>
+</ng-template>

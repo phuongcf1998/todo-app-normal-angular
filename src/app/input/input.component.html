@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="d-flex justify-content-center">
+      <input
+        class="input-add form-control"
+        (keydown.enter)="addItem(newItem.value)"
+        #inputItem
+        #newItem
+        type="text"
+        placeholder="Type item name todo"
+      />
+    </div>
+  </div>
+</div>

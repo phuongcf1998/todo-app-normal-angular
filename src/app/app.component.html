@@ -1,0 +1,21 @@
+<h1 class="mt-5">Todo App</h1>
+
+ 
+
+<app-input (newItemEvent)="addItem($any($event))" ></app-input>
+
+<app-list
+
+  [items]="items"
+
+  [itemsSuccess]="itemsSuccess"
+
+  (successItem)="handleSuccessItem($event)"
+
+  (deleteItemDefault)="handleDeleteItemDefault($event)"
+
+  (deleteItemSuccess)="handleDeleteItemSuccess($event)"
+
+ 
+
+></app-list>

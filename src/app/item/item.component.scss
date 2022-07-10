@@ -1,0 +1,40 @@
+.item-wrapper {
+  list-style: none;
+  word-break: break-all;
+  margin-top: 10px;
+}
+
+.icon-success {
+  font-size: 1.5rem;
+  color: green;
+}
+.item-name {
+  font-weight: 200;
+  font-size: 2rem;
+}
+.btn-complete{
+  background-color: #22C55E!important;
+}
+.btn-complete,
+.btn-delete {
+  margin: 10px;
+}
+.item-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.line-through {
+  text-decoration-line: line-through;
+}
+@media screen and (max-width: 1024px) {
+  .item-btn-groups .classtooverride {
+    justify-content: flex-end !important;
+  }
+}
